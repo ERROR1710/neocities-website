@@ -12,7 +12,7 @@
     --accent-color: rgb(91, 29, 150);
     --link-color: rgb(91, 59, 156);
     --bg-color: black;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-color: rgba(25, 0, 58, 0.247);
     --text-color: rgb(129, 91, 151);
     --text-color2: rgb(159, 126, 197);
     --favorite-color: rgb(79, 53, 131);
@@ -25,7 +25,7 @@
 * {
     color: var(--text-color);
     font-family: Pixel, Geneva, Tahoma, sans-serif;
-    text-shadow: 1px 1px 1px var(--shadow-color);
+    text-shadow: 1px 1px 4px var(--shadow-color);
 /* custom scrollbars don't appear for all browsers, but i like setting them anyway */
     scrollbar-color: var(--favorite-color) var(--bg-color);
     scrollbar-width: thin;
