@@ -1,8 +1,8 @@
 /* these are the main colors and header image
    replace them with anything you want! */
 :root {
-    --site-bg: url('images/bg-image.png');
-    --main-bg: url('images/nothing.png');
+    --site-bg: url('img/bg-image.png');
+    --main-bg: url('img/nothing.png');
     --gradient-bg: linear-gradient(0deg, #0000 0%, #1c246288 33%, #18084388 90%);
     --accent-color: violet;
     --link-color: mediumpurple;
