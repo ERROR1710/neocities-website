@@ -76,6 +76,12 @@ nav ul {
 /* and this spaces out the buttons so they're not touching */
     justify-content: space-evenly;
 }
+nav li{
+    transition: margin-top 100ms ease;
+}
+nav li:hover{
+    margin-top: -10px;
+}
 nav li a {
     background-color: var(--color-bg);
     border: 5px solid rgb(167, 145, 180);
@@ -87,6 +93,7 @@ nav li a {
 }
 nav li a:hover {
     border: 5px solid var(--accent-color);
+    margin-top: -10px;
 }
 
 a {
