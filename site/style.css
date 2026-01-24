@@ -1,15 +1,21 @@
+@font-face {
+        font-family: Pixel;
+        src: url(font/GrapeSoda.ttf);
+    }
+
 /* these are the main colors and header image
    replace them with anything you want! */
 :root {
     --site-bg: url('img/bg-image.png');
     --main-bg: url('img/nothing.png');
-    --gradient-bg: linear-gradient(0deg, #0000 0%, #1c246288 33%, #18084388 90%);
-    --accent-color: violet;
-    --link-color: mediumpurple;
+    --color-bg: #baa8c2;
+    --accent-color: rgb(91, 29, 150);
+    --link-color: rgb(91, 59, 156);
     --bg-color: black;
-    --text-color: violet;
-    --text-color2: white;
-    --favorite-color: darkslateblue;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-color: rgb(129, 91, 151);
+    --text-color2: rgb(159, 126, 197);
+    --favorite-color: rgb(79, 53, 131);
 }
 /* this theme mostly uses default css colors, but you can get hex codes from sites like this:
    https://palettes.shecodes.io/
@@ -18,8 +24,8 @@
 /* this applies to all the content */
 * {
     color: var(--text-color);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 2px 2px 5px var(--bg-color);
+    font-family: Pixel, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px var(--shadow-color);
 /* custom scrollbars don't appear for all browsers, but i like setting them anyway */
     scrollbar-color: var(--favorite-color) var(--bg-color);
     scrollbar-width: thin;
@@ -36,8 +42,6 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     background-image: var(--site-bg);
-/* you can add a background-position if you don't want it to be top left! this one is set to not tile */
-    background-repeat: no-repeat;
 }
 /* i think having better line spacing helps text to be more readable, but you can remove it if you want */
 p {line-height: 1.5em;}
@@ -73,8 +77,8 @@ nav ul {
     justify-content: space-evenly;
 }
 nav li a {
-    background-color: var(--bg-color);
-    border: 1px solid var(--favorite-color);
+    background-color: var(--color-bg);
+    border: 5px solid rgb(167, 145, 180);
     padding: .5em 3em;
 /* this takes away the link underline */
     text-decoration: none;
@@ -82,7 +86,7 @@ nav li a {
     transition: color 400ms ease-out, border-color 400ms ease-out;
 }
 nav li a:hover {
-    border: 1px solid var(--accent-color);
+    border: 5px solid var(--accent-color);
 }
 
 a {
@@ -93,16 +97,19 @@ a:visited {
     color: var(--favorite-color);
 }
 a:hover {
-    color: var(--text-color2);
+    color: var(--favorite-color);
 }
 
 /* you can change this to lots of things. i picked a star! */
 ul { list-style-type: "✦ "; }
 
 #sidebar {
-    background-image: var(--main-bg);
-    border: 1px solid var(--favorite-color);
+    background: var(--color-bg);
+    border: 5px solid rgb(167, 145, 180);
     min-width: 220px;
+    max-height: fit-content;
+    margin-right: 10px;
+    box-shadow: -4px 4px 4px var(--shadow-color);
 }
 
 #avatar {
@@ -114,7 +121,7 @@ ul { list-style-type: "✦ "; }
 #avatar img {
     background: var(--bg-color);
     max-width: 160px;
-    border: 1px solid var(--favorite-color);
+    border: 5px solid var(--favorite-color);
     box-shadow: var(--accent-color) 0 0 4px;
 }
 
@@ -122,7 +129,7 @@ ul { list-style-type: "✦ "; }
     font-size: smaller;
     margin: 1em;
     background: var(--bg-color);
-    border: 1px solid var(--favorite-color);
+    border: 5px solid var(--favorite-color);
     box-shadow: var(--accent-color) 0 0 4px;
 }
 #bio p {
@@ -137,20 +144,20 @@ ul { list-style-type: "✦ "; }
 }
 
 main {
-    background-image: var(--main-bg);
     background-repeat: repeat;
+    background-color: var(--color-bg);
     image-rendering: pixelated;
     max-width: 800px;
     margin: auto;
-    border: 1px solid darkslateblue;
+    border: 5px solid rgb(167, 145, 180);
     color: var(--accent-color);
     max-height: 600px;
     overflow:auto;
+    box-shadow: -4px 4px 4px var(--shadow-color);
 }
 
 .prose {
 /* i couldn't put padding on main without it cutting off the background, so the padding is here... sorry if this extra class is a little inconvenient */
-    background: var(--gradient-bg);
     margin: 0;
     padding: 1em;
 }
