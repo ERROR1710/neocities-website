@@ -108,6 +108,7 @@ ul { list-style-type: "✦ "; }
     border: 5px solid rgb(167, 145, 180);
     min-width: 220px;
     max-height: fit-content;
+    height: -moz-max-content;
     margin-right: 10px;
     box-shadow: -4px 4px 4px var(--shadow-color);
 }
