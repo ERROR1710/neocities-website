@@ -187,7 +187,7 @@ main {
     margin: auto;
     border: 5px solid rgb(167, 145, 180);
     color: var(--accent-color);
-    height: 575px;
+    height: 577px;
     overflow-x:hidden;
     box-shadow: -4px 4px 4px var(--shadow-color);
     transition: transform 100ms ease;
