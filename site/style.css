@@ -1,9 +1,3 @@
-@keyframes startAnim    {
-    0% {transform: scale(0);}
-    75% {transform: scale(1.1);}
-    100% {transform: scale(1);}
-}
-
 @keyframes imgAnim  {
     0%  {transform: rotate(0deg);}
     33% {transform: rotate(10deg);}
@@ -66,8 +60,6 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     background-image: var(--site-bg);
-    animation-name: startAnim;
-    animation-duration: 1s;
 }
 /* i think having better line spacing helps text to be more readable, but you can remove it if you want */
 p {line-height: 1.5em;}

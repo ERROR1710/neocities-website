@@ -1,0 +1,224 @@
+@keyframes startAnim    {
+    0% {transform: scale(0);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes imgAnim  {
+    0%  {transform: rotate(0deg);}
+    33% {transform: rotate(10deg);}
+    66% {transform: rotate(-10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes avatarAnim  {
+    0%  {transform: rotate(0deg);}
+    25% {transform: rotate(-10deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes blinkieScroll  {
+    0%  {transform: translateX(0%);}
+    100%    {transform: translateX(-50%);}
+}
+
+@font-face {
+        font-family: Pixel;
+        src: url(font/GrapeSoda.ttf);
+    }
+
+/* these are the main colors and header image
+   replace them with anything you want! */
+:root {
+    --site-bg: url('img/bg-image.png');
+    --main-bg: url('img/nothing.png');
+    --color-bg: #baa8c2;
+    --accent-color: rgb(91, 29, 150);
+    --link-color: rgb(91, 59, 156);
+    --bg-color: black;
+    --shadow-color: rgba(25, 0, 58, 0.247);
+    --text-color: rgb(129, 91, 151);
+    --text-color2: rgb(159, 126, 197);
+    --favorite-color: rgb(79, 53, 131);
+}
+/* this theme mostly uses default css colors, but you can get hex codes from sites like this:
+   https://palettes.shecodes.io/
+   i just looked up "css color templates" to find that link! */
+
+/* this applies to all the content */
+* {
+    color: var(--text-color);
+    font-family: Pixel, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 4px var(--shadow-color);
+/* custom scrollbars don't appear for all browsers, but i like setting them anyway */
+    scrollbar-color: var(--favorite-color) var(--bg-color);
+    scrollbar-width: thin;
+}
+/* this is for when you select text on the page */
+::selection {
+    background: var(--favorite-color);
+    color: var(--bg-color);
+}
+
+html {scroll-behavior: smooth;}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    background-image: var(--site-bg);
+}
+/* i think having better line spacing helps text to be more readable, but you can remove it if you want */
+p {line-height: 1.5em;}
+
+/* this is your site title displayed at the top of the page */
+header > h1 {
+    margin: 1em auto;
+    max-width: 960px;
+    padding-left: 1em;
+/* you can change the text-align to center or right if you want it placed differently */
+    text-align: left;
+    color: var(--text-color2);
+}
+
+nav {
+    padding: 0 1em 1em 1em;
+    font-weight: bold;
+}
+
+nav ul {
+    max-width: 960px;
+    margin: auto;
+    line-height: 3rem;
+/* this stuff makes it wrap around on mobile */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+/* this line takes away the dot in front of the list items */
+    list-style-type: none;
+/* list items have default padding but we don't need it for these */
+    padding-left: 0;
+/* and this spaces out the buttons so they're not touching */
+    justify-content: space-evenly;
+}
+nav li{
+    transition: transform 100ms ease;
+}
+nav li:hover{
+    transform: translateY(-10px);
+}
+nav li a {
+    background-color: var(--color-bg);
+    border: 5px solid rgb(167, 145, 180);
+    padding: .5em 3em;
+/* this takes away the link underline */
+    text-decoration: none;
+}
+
+a {
+    color: var(--link-color);
+    transition: color 400ms ease-out;
+}
+a:visited {
+    color: var(--favorite-color);
+}
+a:hover {
+    color: var(--favorite-color);
+}
+
+/* you can change this to lots of things. i picked a star! */
+ul { list-style-type: "✦ "; }
+
+#content {
+    display: flex;
+    max-width: 960px;
+    margin: auto;
+}
+
+main {
+    background-color: var(--color-bg);
+    image-rendering: pixelated;
+    max-width: auto;
+    margin: auto;
+    border: 5px solid rgb(167, 145, 180);
+    color: var(--accent-color);
+    height: 577px;
+    overflow-x:hidden;
+    box-shadow: -4px 4px 4px var(--shadow-color);
+    transition: transform 100ms ease;
+    position: relative;
+    text-align: center;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+main:hover {
+    transform: scale(1.1);
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+    padding: 1em;
+}
+
+.row    {   
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 50%;
+    padding: 0 4px;
+    margin-right: 10px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  transition: transform 100ms ease;
+  border: 5px solid rgb(167, 145, 180);
+}
+.column img:hover   {
+    transform: scale(1.1);
+}
+
+/* these are the mobile styles! */
+@media only screen and (max-width: 800px) {
+    #content {
+        flex-wrap: wrap;
+    }
+    #sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2em;
+    }
+    #avatar {margin: 0 1em;}
+    #bio {width: 50%;}
+    #sidebar ul {   
+        margin: 0 1em;
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 2em;
+        padding-left: 0;
+    }
+    #sidebar li {
+        margin: .3em 1em;
+    }
+    main {
+/* remove scrollbar for mobile */
+        max-height: fit-content;
+    }
+    .img-right {
+        float: none;
+        text-align: center;
+    }
+}
